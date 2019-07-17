@@ -1,0 +1,136 @@
+@import './frontend/Utilities/Extends.scss'; 
+@import './frontend/Utilities/Mixins.scss'; 
+@import './frontend/Utilities/Variables.scss';
+@import './frontend/Utilities/KeyFrames.scss';
+
+body {
+  background-color: $white-smoke;
+  font-family: $font-stack;
+}
+
+.App {
+  margin: 100px;
+  text-align: center;
+}
+
+.App .container {
+  // margin-top: 200px;
+  @include grid(
+    $gap: 20px 100px, 
+    $temp-col: repeat(auto-fit, minmax(250px, 1fr)));
+}
+
+.profile-img {
+  display: block;
+  animation: fadeOut 3s;
+  border-radius: $br--default;
+  @include dim($w: 100%, $h: 100%);
+}
+
+.profile-item {
+  @include dim($w: 300px);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .overlay {
+      background: $light-black;
+      top: 0;
+    }
+  }
+}
+
+.overlay {
+  @include pos($pos: absolute, $left: 0);
+  @include dim($w: 100%, $h: 100%);
+  transition: all .9s;
+  animation: fadeOut 8s;
+}
+
+.overlay-name, .name {
+  color: $black;
+  text-decoration: none;
+  animation: fadeOut 8s;
+}
+
+.overlay-name:hover, .overlay:hover {
+  animation: text2 3s 1;
+}
+
+
+.Info {
+  margin-top: 200px;
+  h1 {
+      letter-spacing: $letter-space;
+      font-size: $base__font-size;
+      font-weight: $font-weight--bold;
+      text-transform: uppercase;
+      animation: text 3s 1;
+  }
+      &-content {
+        @extend %center;
+        @include flexbox($dir: column);
+        @include mq('medium') {
+            @include flexbox($dir: row);
+            margin: 0 50%;
+        }
+        &-image {
+          @include dim($w: 300px);
+        }
+
+        &-textbox {
+          @include dim($w: 400px, $h: 150px);
+          @extend %box-shadow;
+          flex-shrink: 0;
+          background: $light-black;
+          margin: 100px 100px;
+          border-radius: $br--default;
+          // position: relative;
+          @include mq('medium') {
+              @include dim($w: 220px, $h: 300px);
+                  margin-right: 50px;
+              @include mq('large') {
+                  @include dim($w: 300px, $h: 300px);
+                  margin-right: 120px;
+              }
+          }
+        }
+    }
+
+      &-text {
+      font-size: 16px;
+      text-align: center;
+      color: $white;
+      font-weight: $font-weight--bold;
+      @include pos($pos: relative, $top: 10%);
+      @include mq('medium') {
+          font-size: 20px;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+      }
+  }
+
+}
+
+.info-content-image, .Info-content-textbox, .Info-content-text {
+    animation: fadeOut 3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

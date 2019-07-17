@@ -1,0 +1,24 @@
+@import '../../../frontend/Utilities/Mixins';
+
+.navbar {
+    background: rgba(0,0,0,.8);
+    @include pos($pos: fixed, $top: 0);
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    padding: 40px 0;
+    text-align: right;
+    &-item {
+        padding: 0 50px 100px 0;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+}
+
+.Header-logo {
+    @include pos($pos: absolute, $top: 0, $left: 0);
+    height: 120px;
+    width: 160px;
+}

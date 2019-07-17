@@ -1,0 +1,24 @@
+@import '../../Utilities/Mixins';
+
+.Footer {
+    background: rgba(0,0,0,.8);
+    width: 100%;
+    margin-top: 3.5em;
+    padding: 40px;
+    text-align: center;
+    color: white;
+
+    &-container {
+        @include flexbox($just: center);
+        margin: 0 auto;
+    }
+
+    &-item {
+        padding: 0 20px 0 0;
+        @include flexbox($dir: row, $align: center);
+
+        img {
+            width: 50px;
+        }
+    }
+}
