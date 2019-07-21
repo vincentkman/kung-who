@@ -13,7 +13,7 @@ const responseGoogle = (response) => {
         },
         redirect: 'follow',
         referrer: 'no-referrer',
-        body: JSON.stringify(data)
+        body: JSON.stringify(response)
     });
 }
 
