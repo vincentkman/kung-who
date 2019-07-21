@@ -3,6 +3,18 @@ import GoogleLogin from 'react-google-login';
 
 const responseGoogle = (response) => {
     console.log(response);
+    fetch('/rest/login', { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        cache: 'no-cache', 
+        credentials: 'same-origin', 
+        headers: {
+            'Authorization': 'Bearer' + response.hg.id_token
+        },
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        body: JSON.stringify(data)
+    });
 }
 
 export default function SignIn() {
