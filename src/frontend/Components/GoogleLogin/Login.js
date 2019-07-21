@@ -3,13 +3,15 @@ import GoogleLogin from 'react-google-login';
 
 const responseGoogle = (response) => {
     console.log(response);
+    console.log(response.hg);
+    console.log(response.id_token);
     fetch('/rest/login', { 
         method: 'POST', 
         mode: 'no-cors', 
         cache: 'no-cache', 
         credentials: 'same-origin', 
         headers: {
-            'Authorization': 'Bearer' + response.hg.id_token
+            'Authorization': 'Bearer' + response.id_token
         },
         redirect: 'follow',
         referrer: 'no-referrer',
