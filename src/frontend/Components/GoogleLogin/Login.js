@@ -8,7 +8,7 @@ const responseGoogle = (response) => {
 export default function SignIn() {
     return(
             <GoogleLogin
-                clientId='447734951530-efse9vaggts4cqivag0s0rl5ato5qdoh.apps.googleusercontent.com'
+                clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
                 buttonText='Login'
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
