@@ -14,7 +14,8 @@ const responseGoogle = (response) => {
         redirect: 'follow',
         referrer: 'no-referrer',
         body: JSON.stringify(response)
-    });
+    })
+    .then(response => console.log('from backend', response))
 }
 
 export default function SignIn() {

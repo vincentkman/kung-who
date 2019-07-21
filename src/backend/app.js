@@ -23,6 +23,7 @@ app.post('/rest/signin', (req, res) => {
     let parsed= JSON.parsed(req)
     let token = jwtSimple.decode(parsed.hg.id_token);
     let response = {token, hd: 'https://kung-who.herokuapp.com/', secret: 'gmRXBkluAd9oG_fvQGHJjMTP'}
+    console.log(response)
     res.send(response)
 }); 
 
