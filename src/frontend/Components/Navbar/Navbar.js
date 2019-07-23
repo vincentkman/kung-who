@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import '../../../frontend/Components/LandingPage/LandingPage.scss';
-import Logo from '../../../frontend/Components/common/images/logo2.jpg';
+import Logo from '../../../frontend/Components/common/images/kungwhologo.png';
+
 
 class Navbar extends React.Component {
     render() {
