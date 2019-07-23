@@ -5,7 +5,7 @@ import './Loading.scss';
 export default function Loading() {
     return (
         <div className='load-container'>
-            <div className='loader'></div>
+            <div className='loader'>Use this time to do 10 push-ups!</div>
         </div>
     );
 }
