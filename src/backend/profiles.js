@@ -5,60 +5,71 @@
 // "https://www.google.com/maps/embed/v1/place?q=Limehouse&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
 
 
-let getProfiles = function() {
+let getProfiles = function () {
     return [
-        { 
-            id: 'adamsmith', 
-            firstname: 'Adam', 
-            lastname: 'Smith', 
+        {
+            id: 'adamsmith',
+            firstname: 'Adam',
+            lastname: 'Smith',
             address: 'Bermondsey',
             map: 'bermondsey',
             rate: '20',
-            type: 'Tai-Chi',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' 
+            type: 'Brazilian Jiu Jitzu',
+            description: "Hi, I'm Adam. A student who has become one with the art of BJJ. Do or do not, there is no try. Stationed in Bermondsey, my studio is in the old biscuit factory where we practice as a group or one on one."
         },
-        { 
-            id: 'katieberry', 
-            firstname: 'Katie', 
-            lastname: 'Berry', 
-            address: 'Canada Water', 
-            map: 'canada%20water',
-            rate: '30',
-            type: 'Wing-Chun',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-          },
         {
-            id: 'natalieprice', 
-            firstname: 'Natalie', 
-            lastname: 'Price', 
-            gender: 'Female',
-            address: 'Surrey Quays', 
-            map: 'peckham',
+            id: 'katieberry',
+            firstname: 'Katie',
+            lastname: 'Berry',
+            address: 'Canada Water',
+            map: 'canada water',
             rate: '30',
-            type: 'Wing-Chun',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' 
-            },
-        { 
-            id: 'peterjones', 
-            firstname: 'Peter', 
-            lastname: 'Jones', 
+            type: 'Viet Vo Dao',
+            description: "Hey, Katie Berry here, I've been learning Viet Vo Dao after seing it practiced on a family holiday to Vietnam since I was 12. Reaching 1st degree instructor level, im more than happy to teach others!"
+        },
+        {
+            id: 'natalieprice',
+            firstname: 'Natalie',
+            lastname: 'Price',
+            gender: 'Female',
+            address: 'Surrey Quays',
+            map: 'surrey quays',
+            rate: '45',
+            type: 'Boxing',
+            description: "Hi everyone, I'm Natalie. After a few years working in the city i needed a way to let off some steam and took up boxing, my studio is mainly set up for sandbags and speedbags to work on form over sparing."
+        },
+        {
+            id: 'peterjones',
+            firstname: 'Peter',
+            lastname: 'Jones',
             gender: 'Male',
-            address: 'Southwark', 
+            address: 'deptford',
             map: 'deptford',
-            rate: 30,
-            type: 'Wing-Chun',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' 
-            },
-        {
-            id: 'sarahhills', 
-            firstname: 'Sarah', 
-            lastname: 'Hills', 
-            gender: 'Female',
-            address: 'Limehouse', 
-            map: 'Limehouse',
             rate: '30',
-            type: 'Wing-Chun',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' 
+            type: 'Southern Dragon Kung Fu',
+            description: "Oi, I'm Peter Jones, not related to the Dragon but I certainly teach it."
+        },
+        {
+            id: 'sarahhills',
+            firstname: 'Sarah',
+            lastname: 'Hills',
+            gender: 'Female',
+            address: 'Limehouse',
+            map: 'Limehouse',
+            rate: '40',
+            type: 'taekwondo',
+            description: "Learning Taekwondo means learning 5 essential tenents. These are courtesy, integrity, perseverance, self-control and indomitable spirit. If that hasn't scared you off, welcome jeja!"
+        },
+        {
+            id: 'luciewinters',
+            firstname: 'Lucie',
+            lastname: 'Winters',
+            gender: 'Female',
+            address: 'manorhouse',
+            map: 'manorhouse',
+            rate: '25',
+            type: 'Mixed Martial Arts',
+            description:"Prepare for the octogan with an instructor who has a combined 7 years in Muay Thai, boxing and Judo."
         }
     ];
 }
