@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading'
 import Map from '../../Components/Map/Map';
 import '../../Components/Loading/Loading.scss';
@@ -38,6 +38,7 @@ function InfoContent({ trainer }) {
     return (
         <div className='Info'>
             <h1>{trainer.firstname} {trainer.lastname}</h1>
+            <h3>{trainer.type}</h3>
             <div className='Info-content'>
                 <img
                     className='Info-content-image profile-img'
@@ -53,6 +54,7 @@ function InfoContent({ trainer }) {
                     <Map title={trainer.address} map={trainer.map} />
                 </div>
             </div>
+            <Link to='/' >Home</Link>
         </div>
     );
 }

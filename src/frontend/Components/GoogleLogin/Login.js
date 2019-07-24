@@ -1,40 +1,54 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-const failureGoogle = (res) => {
-    console.log("Looks like we failed :(, res is: ", res);
-}
 
+export default class SignIn extends React.Component{
+    constructor() {
+        super();
+        this.state = { Name: 'Paraic' }
+        this.responseGoogle = this.responseGoogle.bind(this)
+        this.failureGoogle = this.failureGoogle.bind(this)
+    }
 
-const responseGoogle = (response) => {
-    console.log("Google's response is: ", response);
-    // console.log(response.tokenId);
-    // console.log("JSON.stringify gives us: ", JSON.stringify(response));
-    fetch('/rest/login', { 
-        method: 'POST', 
-        // mode: 'no-cors', 
-        // cache: 'no-cache', 
-        // credentials: 'same-origin', 
-        headers: {
-            'Authorization': 'Bearer ' + response.tokenId
-        },
-        // redirect: 'follow',
-        // referrer: 'no-referrer',
-        // body: JSON.stringify(response)
-    })
-    .then(response => response.ok ? response.json() : Promise.reject())
-    .then(res => console.log('from backend', res));
-}
+    responseGoogle = (response) => {
+        console.log("Google's response is: ", response);
+        // console.log(response.tokenId);
+        // console.log("JSON.stringify gives us: ", JSON.stringify(response));
+        fetch('/rest/login', {
+            method: 'POST',
+            // mode: 'no-cors', 
+            // cache: 'no-cache', 
+            // credentials: 'same-origin', 
+            headers: {
+                'Authorization': 'Bearer ' + response.tokenId
+            },
+            // redirect: 'follow',
+            // referrer: 'no-referrer',
+            // body: JSON.stringify(response)
+        })
+            .then(response => response.ok ? response.json() : Promise.reject())
+            .then(res => {
+                console.log('from backend', res);
+                console.log(`A part of our token: ${res.decodedToken.family_name}, ${res.decodedToken.given_name}`);
+                this.setState({ Name: `${res.decodedToken.given_name} ${res.decodedToken.family_name}` }, () => console.log(this.state.Name))
+            });
+        }
 
-export default function SignIn() {
-    return(
-            <GoogleLogin
+    failureGoogle = (res) => {
+        console.log("Looks like we failed :(, res is: ", res);
+    }
+
+    render() {
+        return (
+                <GoogleLogin
                 clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
                 buttonText='Login'
-                onSuccess={responseGoogle}
-                onFailure={failureGoogle}
+                onSuccess={this.responseGoogle}
+                onFailure={this.failureGoogle}
                 cookiePolicy={'single_host_origin'}
-            />
-    )
+                />
+        );
+    }
+    
 }
 
