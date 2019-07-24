@@ -1,9 +1,15 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
+const failureGoogle = (res) => {
+    console.log("Looks like we failed :(, res is: ", res);
+}
+
+
 const responseGoogle = (response) => {
-    console.log(response);
-    console.log(response.tokenId);
+    console.log("Google's response is: ", response);
+    // console.log(response.tokenId);
+    // console.log("JSON.stringify gives us: ", JSON.stringify(response));
     fetch('/rest/login', { 
         method: 'POST', 
         mode: 'no-cors', 
@@ -25,7 +31,7 @@ export default function SignIn() {
                 clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
                 buttonText='Login'
                 onSuccess={responseGoogle}
-                onFailure={responseGoogle}
+                onFailure={failureGoogle}
                 cookiePolicy={'single_host_origin'}
             />
     )
