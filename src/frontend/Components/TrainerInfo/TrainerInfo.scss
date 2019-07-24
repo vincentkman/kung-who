@@ -1,0 +1,32 @@
+
+.chat {
+    position: absolute;
+    top: 1750px;
+    @media (min-width: 768px) {
+        top: 1400px;
+    }
+}
+
+
+.info-button {
+    position: absolute;
+    top: 2400px;
+    left: 10%;
+    @media (min-width: 768px) {
+        top: 2200px;
+        left: 35%;
+    }
+
+}
+
+.home-button {
+    color: #ffffff;;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1em 2em;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: black;
+    outline: none;
+    margin-left: 150px;
+}

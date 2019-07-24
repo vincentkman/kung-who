@@ -1,4 +1,25 @@
-// @import '../../../Utilities/Extends'; 
-// @import '../../../Utilities/Mixins'; 
-// @import '../../../Utilities/Variables';
-// @import '../../../Utilities/KeyFrames';
+.profile-item {
+    text-decoration: none;
+    &-details {
+        border: 1px solid lightgrey;
+
+        &-title {
+            text-transform: uppercase;
+        }
+    }
+}
+
+input {
+    width: 60%;
+    border-radius: 5px;
+    border: none; 
+    color: black;
+    font-size: 16px;
+    padding: 13px;
+    margin: 15px 0 80px 0;
+    &:focus {
+      outline: none;
+      background-color: #FFF8DC;
+      transition: all 1s;
+    }
+  }

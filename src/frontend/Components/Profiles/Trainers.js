@@ -35,7 +35,6 @@ export default class Trainers extends React.Component {
 
     searchHandler(event) {
         let value = event.target.value;
-        this.setState({personTrainers: this.state.trainersData.length});
         return this.searchFilter(value).length > 0 ?
                 this.setState({trainersData: this.searchFilter(value)}) :
                 this.componentDidMount();
@@ -43,8 +42,6 @@ export default class Trainers extends React.Component {
 
 
     render() {
-
-
         let trainers = this.state.trainersData;
 
         if (!trainers) {
