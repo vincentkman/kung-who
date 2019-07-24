@@ -14,7 +14,6 @@ body {
 }
 
 .App .container {
-  // margin-top: 200px;
   @include grid(
     $gap: 20px 100px, 
     $temp-col: repeat(auto-fit, minmax(250px, 1fr)));
@@ -23,8 +22,7 @@ body {
 .profile-img {
   display: block;
   animation: fadeOut 3s;
-  border-radius: $br--default;
-  @include dim($w: 100%, $h: 100%);
+  @include dim($w: 100%);
 }
 
 .profile-item {
@@ -32,34 +30,14 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  &:hover {
-    .overlay {
-      background: $light-black;
-      top: 0;
-    }
-  }
-}
-
-.overlay {
-  @include pos($pos: absolute, $left: 0);
-  @include dim($w: 100%, $h: 100%);
-  transition: all .9s;
-  animation: fadeOut 8s;
-}
-
-.overlay-name, .name {
-  color: $black;
-  text-decoration: none;
-  animation: fadeOut 8s;
-}
-
-.overlay-name:hover, .overlay:hover {
-  animation: text2 3s 1;
 }
 
 
 .Info {
-  margin-top: 200px;
+  min-height: 1800px;
+  @include mq('medium') {
+    min-height: 1600px;
+  }
   h1 {
       letter-spacing: $letter-space;
       font-size: $base__font-size;
@@ -75,20 +53,27 @@ body {
             margin: 0 50%;
         }
         &-image {
-          @include dim($w: 300px);
+          @include dim(250px, 250px);
+          border-radius: 50%;
+          position: absolute;
+          top: 800px;
+          margin-top: -70px;
+          @include mq('medium') {
+            margin-top: -100px;
+          }
         }
 
         &-textbox {
-          @include dim($w: 400px, $h: 150px);
+          @include dim($w: 400px, $h: 200px);
+          padding: 20px;
           @extend %box-shadow;
           flex-shrink: 0;
-          background: $light-black;
-          margin: 100px 100px;
+          background: white;    
+          margin: 300px;
           border-radius: $br--default;
-          // position: relative;
           @include mq('medium') {
-              @include dim($w: 220px, $h: 300px);
-                  margin-right: 50px;
+              @include dim($w: 260px, $h: 300px);
+                  margin: 250px 50px 0 0;
               @include mq('large') {
                   @include dim($w: 300px, $h: 300px);
                   margin-right: 120px;
@@ -113,11 +98,9 @@ body {
 
 }
 
-.info-content-image, .Info-content-textbox, .Info-content-text {
+.info-content-image, .Info-content-textbox, .Info-content-text, .profile-keyframe {
     animation: fadeOut 3s;
 }
-
-
 
 
 

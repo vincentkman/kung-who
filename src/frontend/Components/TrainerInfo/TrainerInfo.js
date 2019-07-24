@@ -2,6 +2,10 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading'
 import Map from '../../Components/Map/Map';
+
+import Dashboard from '/Users/vincentman/Desktop/kung-who/src/frontend/Components/Chat/Dashboard/Dashboard.js';
+import Store from '/Users/vincentman/Desktop/kung-who/src/frontend/Components/Chat/Store/Store.js';
+
 import '../../Components/Loading/Loading.scss';
 import './TrainerInfo.scss';
 
@@ -38,7 +42,6 @@ function InfoContent({ trainer }) {
     return (
         <div className='Info'>
             <h1>{trainer.firstname} {trainer.lastname}</h1>
-            <h3>{trainer.type}</h3>
             <div className='Info-content'>
                 <img
                     className='Info-content-image profile-img'
@@ -47,14 +50,30 @@ function InfoContent({ trainer }) {
                 />
                 <div className='Info-content-textbox'>
                     <p className='Info-content-text'>
+                        Discipline: {trainer.type}
+                    </p>
+                    <p className='Info-content-text'>
+                        Location: {trainer.address}
+                    </p>
+                    <p className='Info-content-text'>
+                        £{trainer.rate}/hour
+                </p>
+                    <p className='Info-content-text'>
                         {trainer.description}
                     </p>
                 </div>
                 <div>
                     <Map title={trainer.address} map={trainer.map} />
                 </div>
+                <div className='chat'>
+                    <Store name={trainer.name}>
+                        <Dashboard />
+                    </Store>
+                </div>
             </div>
-            <Link to='/' >Home</Link>
+           <div className='info-button'>
+             <Link to='/' ><button className='home-button'>Home</button></Link>
+           </div>
         </div>
     );
 }

@@ -9,6 +9,17 @@ const getProfiles = require('./profiles');
 const jwtSimple = require('jwt-simple');
 require('dotenv').config();
 
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+ 
+io.on('connection', function (socket) {
+    console.log('a user connected');
+    socket.on('chat message', function(msg) {
+        console.log('message: ' + JSON.stringify(msg));
+        io.emit('chat message', msg);
+    });
+});
+
 app.get('/rest/profiles/:id', (req, res) => {
     res.send(getProfiles().find(profile => profile.id === req.params.id));
 });
@@ -47,4 +58,8 @@ app.post('/rest/login', jsonParser, (req, res) => {
     // res.send(response)
 }); 
 
-app.listen(port, () => console.log(`Server started on port ${port}!`));
+// app.listen(port, () => console.log(`Server started on port ${port}!`));
+
+var server = http.listen(port, () => {
+    console.log('server is running on port', server.address().port);
+});
