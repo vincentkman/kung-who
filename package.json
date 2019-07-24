@@ -1,8 +1,9 @@
 {
-  "name": "theceruleanproject",
+  "name": "kungwho",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "jwt-simple": "^0.5.6",
     "node-sass": "^4.12.0",
