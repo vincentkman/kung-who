@@ -3,8 +3,8 @@ import { Redirect, Link } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading'
 import Map from '../../Components/Map/Map';
 
-import Dashboard from '/Users/vincentman/Desktop/kung-who/src/frontend/Components/Chat/Dashboard/Dashboard.js';
-import Store from '/Users/vincentman/Desktop/kung-who/src/frontend/Components/Chat/Store/Store.js';
+import Dashboard from '../../Components/Dashboard/Dashboard';
+import Store from '../../Components/Store/Store';
 
 import '../../Components/Loading/Loading.scss';
 import './TrainerInfo.scss';
