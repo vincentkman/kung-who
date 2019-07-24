@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const fetch = require('node-fetch');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 3001;
@@ -23,12 +24,23 @@ app.get('*', function(req, res) {
 });   
 
 app.post('/rest/login', jsonParser, (req, res) => {
-    console.log("Request is: ", req);
+    const id_token = req.headers['authorization'].replace('Bearer ', '');
+    console.log("id_token is : ", id_token);
+    fetch(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${id_token}`).then(res => {
+        return res.ok ? res.json() : Promise.reject();
+    }).then(decodedToken => {
+        console.log('Our decoded token is: ', decodedToken);
+        res.end(JSON.stringify({
+            result: 'Hi',
+            decodedToken
+        }));
+    })
+    // console.log(req);
     // console.log(req.body);
     // console.log(parsed);
-    res.end(JSON.stringify({
-        result: 'Hi'
-    }));
+    // res.end(JSON.stringify({
+    //     result: 'Hi'
+    // }));
     // let token = jwtSimple.decode(parsed.hg.id_token);
     // let response = {token, hd: 'https://kung-who.herokuapp.com/', secret: 'gmRXBkluAd9oG_fvQGHJjMTP'}
     // console.log(response)

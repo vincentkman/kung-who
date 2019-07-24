@@ -12,17 +12,18 @@ const responseGoogle = (response) => {
     // console.log("JSON.stringify gives us: ", JSON.stringify(response));
     fetch('/rest/login', { 
         method: 'POST', 
-        mode: 'no-cors', 
-        cache: 'no-cache', 
-        credentials: 'same-origin', 
+        // mode: 'no-cors', 
+        // cache: 'no-cache', 
+        // credentials: 'same-origin', 
         headers: {
-            'Authorization': 'Bearer' + response.tokenId
+            'Authorization': 'Bearer ' + response.tokenId
         },
-        redirect: 'follow',
-        referrer: 'no-referrer',
-        body: JSON.stringify(response)
+        // redirect: 'follow',
+        // referrer: 'no-referrer',
+        // body: JSON.stringify(response)
     })
-    .then(response => console.log('from backend', response))
+    .then(response => response.ok ? response.json() : Promise.reject())
+    .then(res => console.log('from backend', res));
 }
 
 export default function SignIn() {
