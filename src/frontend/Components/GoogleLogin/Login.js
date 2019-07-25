@@ -1,13 +1,13 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
+import GoogleLogin, { GoogleLogout } from 'react-google-login';
 
-
-export default class SignIn extends React.Component{
+export default class SignIn extends React.Component {
     constructor() {
         super();
-        this.state = { Name: 'Paraic' }
+        this.state = { Name: '' }
         this.responseGoogle = this.responseGoogle.bind(this)
         this.failureGoogle = this.failureGoogle.bind(this)
+        this.logout = this.logout.bind(this)
     }
 
     responseGoogle = (response) => {
@@ -32,23 +32,35 @@ export default class SignIn extends React.Component{
                 console.log(`A part of our token: ${res.decodedToken.family_name}, ${res.decodedToken.given_name}`);
                 this.setState({ Name: `${res.decodedToken.given_name} ${res.decodedToken.family_name}` }, () => console.log(this.state.Name))
             });
-        }
+    }
 
     failureGoogle = (res) => {
         console.log("Looks like we failed :(, res is: ", res);
     }
 
+    logout() {
+        this.setState({Name: ''})
+    }
+
     render() {
         return (
-                <GoogleLogin
-                clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
-                buttonText='Login'
-                onSuccess={this.responseGoogle}
-                onFailure={this.failureGoogle}
-                cookiePolicy={'single_host_origin'}
-                />
+            <>
+                <p>{this.state.Name}</p>
+                {this.state.Name ?
+                    <GoogleLogout
+                        buttonText="Logout"
+                        onLogoutSuccess={this.logout}
+                    > 
+                    </GoogleLogout> : <GoogleLogin
+                        clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
+                        buttonText='Login'
+                        onSuccess={this.responseGoogle}
+                        onFailure={this.failureGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />}
+            </>
         );
     }
-    
+
 }
 
