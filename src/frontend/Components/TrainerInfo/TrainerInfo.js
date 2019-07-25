@@ -3,8 +3,8 @@ import { Redirect, Link } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading'
 import Map from '../../Components/Map/Map';
 
-import Dashboard from '../../Components/Dashboard/Dashboard';
-import Store from '../../Components/Store/Store';
+// import Dashboard from '../../Components/Dashboard/Dashboard';
+// import Store from '../../Components/Store/Store';
 
 import '../../Components/Loading/Loading.scss';
 import './TrainerInfo.scss';
@@ -61,19 +61,25 @@ function InfoContent({ trainer }) {
                     <p className='Info-content-text'>
                         {trainer.description}
                     </p>
+                    <p className='Info-content-text'>
+                        <a href={`tel:${trainer.telephone}`}>{trainer.telephone}</a>
+                    </p>
+                    <p className='Info-content-text'>
+                        <a href={`mailto:${trainer.email}`}>{trainer.email}</a>
+                    </p>
                 </div>
                 <div>
                     <Map title={trainer.address} map={trainer.map} />
                 </div>
-                <div className='chat'>
+                {/* <div className='chat'>
                     <Store name={trainer.name}>
                         <Dashboard />
                     </Store>
-                </div>
+                </div> */}
             </div>
-           <div className='info-button'>
-             <Link to='/' ><button className='home-button'>Home</button></Link>
-           </div>
+            <div className='info-button'>
+                <Link to='/' ><button className='home-button'>Home</button></Link>
+            </div>
         </div>
     );
 }

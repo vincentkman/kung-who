@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleLogin, { GoogleLogout } from 'react-google-login';
+import './Login.scss';
 
 export default class SignIn extends React.Component {
     constructor() {
@@ -45,7 +46,7 @@ export default class SignIn extends React.Component {
     render() {
         return (
             <div className='navbar-item-google-in'>
-                <p>{this.state.Name}</p>
+                <p className="google-username">{this.state.Name}</p>
                 {this.state.Name ?
                     <GoogleLogout className='navbar-item-google-out'
                         buttonText="Logout"

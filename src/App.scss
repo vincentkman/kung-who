@@ -34,10 +34,10 @@ body {
 
 
 .Info {
-  min-height: 1800px;
-  @include mq('medium') {
-    min-height: 1600px;
-  }
+  // min-height: 1800px;
+  // @include mq('medium') {
+  //   min-height: 1600px;
+  // }
   h1 {
       letter-spacing: $letter-space;
       font-size: $base__font-size;
@@ -53,7 +53,7 @@ body {
             margin: 0 50%;
         }
         &-image {
-          @include dim(250px, 250px);
+          @include dim(300px);
           border-radius: 50%;
           position: absolute;
           top: 800px;
@@ -73,7 +73,7 @@ body {
           border-radius: $br--default;
           @include mq('medium') {
               @include dim($w: 260px, $h: 300px);
-                  margin: 250px 50px 0 0;
+                  margin: 350px 50px 0 0;
               @include mq('large') {
                   @include dim($w: 300px, $h: 300px);
                   margin-right: 120px;
@@ -98,9 +98,10 @@ body {
 
 }
 
-.info-content-image, .Info-content-textbox, .Info-content-text, .profile-keyframe {
+.info-content-image, .Info-content-textbox, .Info-content-text, .profile-keyframe, .profile-item-details {
     animation: fadeOut 3s;
 }
+
 
 
 

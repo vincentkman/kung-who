@@ -58,6 +58,8 @@ export default class Trainers extends React.Component {
                                 id={trainer.id}
                                 firstname={trainer.firstname}
                                 lastname={trainer.lastname}
+                                email={trainer.email}
+                                telephone={trainer.telephone}
                                 type={trainer.type}
                                 address={trainer.address}
                                 rate={trainer.rate}

@@ -1,16 +1,12 @@
-// "https://www.google.com/maps/embed/v1/place?q=bermondsey&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
-// "https://www.google.com/maps/embed/v1/place?q=canada%20water&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
-// "https://www.google.com/maps/embed/v1/place?q=Surrey%20Quays&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
-// "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJRfG3JloDdkgRwh6IcCt6xNE&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
-// "https://www.google.com/maps/embed/v1/place?q=Limehouse&key=AIzaSyA2mnrO-E4fx-eXWvqFrYbsVMxeF8le030"
-
-
 let getProfiles = function () {
     return [
         {
             id: 'adamsmith',
             firstname: 'Adam',
             lastname: 'Smith',
+            gender: 'Male',
+            email: 'adamsmith@hotmail.com',
+            telephone: '07891267578',
             address: 'Bermondsey',
             map: 'bermondsey',
             rate: '20',
@@ -21,6 +17,9 @@ let getProfiles = function () {
             id: 'katieberry',
             firstname: 'Katie',
             lastname: 'Berry',
+            gender: 'Female',
+            email: 'katieberry@yahoo.com',
+            telephone: '07923076893',
             address: 'Canada Water',
             map: 'canada water',
             rate: '30',
@@ -32,6 +31,8 @@ let getProfiles = function () {
             firstname: 'Natalie',
             lastname: 'Price',
             gender: 'Female',
+            email: 'natalieprice@gmail.com',
+            telephone: '07923076893',
             address: 'Surrey Quays',
             map: 'surrey quays',
             rate: '45',
@@ -43,6 +44,8 @@ let getProfiles = function () {
             firstname: 'Peter',
             lastname: 'Jones',
             gender: 'Male',
+            email: 'peterjones@hotmail.com',
+            telephone: '07137923629',
             address: 'Deptford',
             map: 'deptford',
             rate: '30',
@@ -54,6 +57,8 @@ let getProfiles = function () {
             firstname: 'Sarah',
             lastname: 'Hills',
             gender: 'Female',
+            email: 'sarahhills@yahoo.com',
+            telephone: '07137923629',
             address: 'Limehouse',
             map: 'Limehouse',
             rate: '40',
@@ -65,6 +70,8 @@ let getProfiles = function () {
             firstname: 'Lucie',
             lastname: 'Winters',
             gender: 'Female',
+            email: 'luciewinters@gmail.com',
+            telephone: '07366988712',
             address: 'Manorhouse',
             map: 'manorhouse',
             rate: '25',
