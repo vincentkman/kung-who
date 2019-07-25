@@ -62,10 +62,10 @@ function InfoContent({ trainer }) {
                         {trainer.description}
                     </p>
                     <p className='Info-content-text'>
-                        <a href={`tel:${trainer.telephone}`}>{trainer.telephone}</a>
+                        Tel: <a href={`tel:${trainer.telephone}`}>{trainer.telephone}</a>
                     </p>
                     <p className='Info-content-text'>
-                        <a href={`mailto:${trainer.email}`}>{trainer.email}</a>
+                        Email: <a href={`mailto:${trainer.email}`}>{trainer.email}</a>
                     </p>
                 </div>
                 <div>
