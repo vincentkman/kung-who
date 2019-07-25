@@ -44,7 +44,7 @@ export default class SignIn extends React.Component {
 
     render() {
         return (
-            <>
+            <div className='google-btn'>
                 <p>{this.state.Name}</p>
                 {this.state.Name ?
                     <GoogleLogout
@@ -58,7 +58,7 @@ export default class SignIn extends React.Component {
                         onFailure={this.failureGoogle}
                         cookiePolicy={'single_host_origin'}
                     />}
-            </>
+            </div>
         );
     }
 
