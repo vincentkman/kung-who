@@ -11,9 +11,9 @@ class Navbar extends React.Component {
         return (
             <div>
                 <div className='navbar'>
-                    <SignIn /><br></br>
+                <Link to='/' id='link' className='navbar-item'> <img className='Header-logo' alt='logo' src={Logo}></img></Link>
                     <Link to='/' id='link home' className='home navbar-item'>Home</Link>
-                    <Link to='/' id='link' className='navbar-item'> <img className='Header-logo' alt='logo' src={Logo}></img></Link>
+                    <SignIn /><br></br>
                     {/* <Link to='/contact' id='link' className='navbar-item'>Contact</Link> */}
                 </div>
             </div>

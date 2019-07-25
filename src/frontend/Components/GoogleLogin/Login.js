@@ -39,18 +39,18 @@ export default class SignIn extends React.Component {
     }
 
     logout() {
-        this.setState({Name: ''})
+        this.setState({ Name: '' })
     }
 
     render() {
         return (
-            <div className='google-btn'>
+            <div className='navbar-item-google-in'>
                 <p>{this.state.Name}</p>
                 {this.state.Name ?
-                    <GoogleLogout
+                    <GoogleLogout className='navbar-item-google-out'
                         buttonText="Logout"
                         onLogoutSuccess={this.logout}
-                    > 
+                    >
                     </GoogleLogout> : <GoogleLogin
                         clientId='447734951530-hs0sfegt10lh27a91mlchvdf3o1fcde1.apps.googleusercontent.com'
                         buttonText='Login'
