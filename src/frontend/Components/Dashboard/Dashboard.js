@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dashboard.scss';
 
-import { CTX } from '../../../Components/Chat/Store/Store.js';
+import { CTX } from '../../Components/Store/Store.js';
 
 export default function Dashboard() {
 
