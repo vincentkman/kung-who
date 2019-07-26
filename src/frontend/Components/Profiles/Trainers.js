@@ -49,7 +49,7 @@ export default class Trainers extends React.Component {
         }
         return (
             <div>
-                 <h2>Find your nearest trainer</h2>
+                 <h2>Find your best trainer</h2>
                 <input type="text" className="searchBar" placeholder="Search by type or location" onChange={event => this.searchHandler(event)} />
                 <div className='container'>
                     {
